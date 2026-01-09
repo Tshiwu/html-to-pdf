@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      @font-face {
+        font-family: 'inter';
+        src: url(./Inter-Regular.ttf);
+      }
+      @font-face {
+        font-family: 'inter';
+        font-weight: 700;
+        src: url(./Inter-Bold.ttf) format('truetype');
+    }
+      .invoice-page {
+        font-family: 'inter';
+        margin: 0 auto;
+        width: 595px;
+        height: 833px;
+        background: #f7f7f7;
+        transform: scale(1.37) translateY(110px);
+        box-sizing: border-box;
+      }
+      .invoice-page-header {
+        box-sizing: border-box;
+        display: flex;
+        padding: 40px 40px 30px 40px;
+        justify-content: space-between;
+        align-items: flex-start;
+        align-self: stretch;
+      }
+      .left-tip-wrapper {
+        width: 94px;
+      }
+      img {
+        width: 100%;
+      }
+
+      .invoive-page-body {
+        max-width: 563px;
+        width: 95%;
+        height: 608px;
+        background: #ffffff;
+        margin: 0 auto;
+        box-sizing: border-box;
+        padding: 24px;
+      }
+
+      .from {
+        color: var(--242424, #242424);
+        font-family: Inter;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-top: -2px;
+      }
+
+      .from-msg {
+        color: var(--303030, #303030);
+        font-family: Inter;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        margin-top: 4px;
+        word-wrap: break-word;
+      }
+      .core-top-from {
+        display: flex;
+        justify-content: space-between;
+      }
+      .core-top-from-left {
+        max-width: 225px;
+        text-align: left;
+      }
+
+      .core-top-from-right {
+        padding: 10px 40px;
+        border-radius: 4px;
+        border: 1px solid var(--DADADA, #dadada);
+        text-align: center;
+      }
+      .money-tip {
+        color: var(--303030, #303030);
+        font-family: Inter;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        text-transform: capitalize;
+      }
+
+      .money {
+        color: #000;
+        font-family: Inter;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+      }
+
+      .core-middle-to {
+        margin-top: 40px;
+        max-width: 475px;
+        text-align: left;
+      }
+
+      .core-table {
+        margin-top: 40px;
+        border-radius: 2px 2px 0px 0px;
+ 
+        display: flex;
+        flex-direction: column;
+        font-size: 12px;
+      }
+      .core-table-line {
+
+        display: flex;
+        height: 36px;
+
+        align-items: center;
+      }
+      .line1 {
+        background-color: #f7f7f7;
+        border-top: 1px solid var(--DADADA, #dadada);
+        border-left: 1px solid var(--DADADA, #dadada);
+        border-right: 1px solid var(--DADADA, #dadada);
+        border-radius: 2px 2px 0 0;
+        font-weight: 700;
+      }
+
+      .line2 {
+        background-color: #ffffff;
+        border-top: 1px solid var(--DADADA, #dadada);
+        border-left: 1px solid var(--DADADA, #dadada);
+        border-right: 1px solid var(--DADADA, #dadada);
+      }
+      .line3 {
+        background-color: #ffffff;
+        border-top: 1px solid var(--DADADA, #dadada);
+        border-left: 1px solid var(--DADADA, #dadada);
+        border-right: 1px solid var(--DADADA, #dadada);
+      }
+      .line4 {
+        background-color: #ffffff;
+        border-top: 1px solid var(--DADADA, #dadada);
+        display: flex;
+        justify-content: flex-end;
+      }
+     
+     
+      .line5 {
+        display: flex;
+        justify-content: flex-end;
+        font-weight: 700;
+        .cell_p{
+          background-color: #f7f7f7;
+        }
+        .cell_no_display{
+          background: #ffffff;
+        }
+      }
+
+      .line4 .cell_p{
+        display: flex;
+        align-items: center;
+        height: 100%;
+        text-align: right;
+        justify-content: flex-end;
+        border-bottom: 1px solid var(--DADADA, #dadada);
+      }
+      .line4 .cell_p:last-child{
+        border-right: 1px solid var(--DADADA, #dadada);
+      }
+      
+      .line5 .cell_p:last-child{
+        border-right: 1px solid var(--DADADA, #dadada);
+      }
+
+      .line5 .cell_p{
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        text-align: right;
+        justify-content: flex-end;
+        border-bottom: 1px solid var(--DADADA, #dadada);
+      }
+      .line4 .cell_p:nth-child(2){
+        justify-content: center;
+      }
+      .line5 .cell_p:nth-child(2){
+        justify-content: center;
+        border-left: 1px solid var(--DADADA, #dadada);
+      }
+
+      .cell_p:nth-child(2){
+       text-align: center;
+      }
+
+      .cell_no_display {
+        display: none !important;
+      }
+    
+      .right-tip-title {
+        color: var(--242424, #242424);
+        text-align: right;
+        font-family: Inter;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-transform: uppercase;
+      }
+
+      .right-tip-msg {
+        color: var(--242424, #242424);
+        text-align: right;
+        font-family: Inter;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+      }
+
+      .msg1 {
+        margin-top: 16px;
+      }
+      .cell_p {
+        width: 16.2%;
+
+        text-align: right;
+      }
+      .cell_p1 {
+        text-align: left;
+        width: 47%;
+        padding-left: 12px;
+        
+      }
+
+      .cell_p:nth-of-type(4) {
+        padding-right: 12px;
+      }
+    
+    </style>
+  </head>
+
+  <body>
+    <div class="invoice-page">
+      <div class="invoice-page-header">
+        <div class="left-tip-wrapper">
+          <img src="data:image/png;base64,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" alt="" />
+        </div>
+        <div class="right-tip-wrapper">
+          <h2 class="right-tip-title">Rechnung</h2>
+          <p class="right-tip-msg msg1">Rechnung#: {{.invoiceNo}}</p>
+          <p class="right-tip-msg">Rechnungsdatum: {{.invoiceDate}}</p>
+          <p class="right-tip-msg">Fälligkeitsdatum: {{.payDate}}</p>
+        </div>
+      </div>
+
+      <div class="invoive-page-body">
+        <div class="core-top-from">
+          <div class="core-top-from-left">
+            <p class="from">Aus:</p>
+            <p class="from-msg">Superace Software Technology Co., Ltd. marketing@superace.com</p>
+          </div>
+          <div class="core-top-from-right">
+            <p class="money-tip">Offener Betrag</p>
+            <p class="money">{{.totalPriceFormat}}</p>
+          </div>
+        </div>
+
+        <div class="core-middle-to">
+          <p class="from">Gesetzesentwurf für:</p>
+          <p class="from-msg">
+            {{15615313sd5f1a35sf156asf156asf1a56sf1asfasfas5f1as5f1as56f156156156a1sd51as56d1as56d1as5d1as5d1as5d1as5d1asd1as5d1as5d1as56d1}}&nbsp;<br/>
+            {{.billTo.Company}}&nbsp;<br/>
+            {{.billTo.Addr}}&nbsp;
+            {{.billTo.Country}}&nbsp;<br/>
+            {{.billTo.Email}}&nbsp;
+          </p>
+        </div>
+
+        <div class="core-table">
+          <div class="line1 core-table-line">
+            <p class="cell_p cell_p1">Beschreibung</p>
+            <p class="cell_p">Menge</p>
+            <p class="cell_p">Preis</p>
+            <p class="cell_p">Menge</p>
+          </div>
+          {{range $i, $v := .orderGoods}}
+          <div class="line2 core-table-line">
+            <p class="cell_p cell_p1">{{$v.productName}} - {{.subscriptionType}}</p>
+            <p class="cell_p">{{$v.number}}</p>
+            <p class="cell_p">{{$v.goodsPriceFormat}}</p>
+            <p class="cell_p">{{$v.goodsPriceFormat}}</p>
+          </div>
+          {{end}}
+          <div class="line4 core-table-line">
+            <p class="cell_p cell_p1 cell_no_display">Beschreibung</p>
+            <p class="cell_p" style="border-left: 1px solid var(--DADADA, #dadada);"></p>
+            <p class="cell_p">Zwischensumme</p>
+            <p class="cell_p">{{.totalPriceFormat}}</p>
+            </div>
+        </div>
+        <div class="line5 core-table-line">
+          <p class="cell_p cell_p1 cell_no_display">Beschreibung</p>
+          <p class="cell_p"></p>
+          <p class="cell_p">Total</p>
+          <p class="cell_p">{{.totalPriceFormat}}</p>
+
+        </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
